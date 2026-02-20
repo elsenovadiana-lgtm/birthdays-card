@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px 45px;
+    border-radius: 18px;
+    max-width: 600px;
+    color: #fff;
+    animation: fadeUp 1.5s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.title {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.name {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #cfe9ff;
+    margin-bottom: 25px;
+}
+
+.message {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #eaeaea;
+    white-space: pre-line;
+}
+
+/* Animasi masuk */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Balon versi dewasa */
+.balloon {
+    position: absolute;
+    bottom: -120px;
+    width: 40px;
+    height: 55px;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in;
+}
+
+.balloon::after {
+    content: '';
+    width: 2px;
+    height: 35px;
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    left: 50%;
+    top: 55px;
+}
+
+.balloon1 {
+    background: #4facfe;
+    left: 25%;
+}
+
+.balloon2 {
+    background: #43e97b;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.balloon3 {
+    background: #fa709a;
+    left: 75%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-900px);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+}
